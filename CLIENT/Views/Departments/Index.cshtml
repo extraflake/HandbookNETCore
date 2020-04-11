@@ -1,0 +1,191 @@
+﻿
+@{
+    ViewData["Title"] = "Department";
+}
+
+
+<div class="container-fluid">
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+            <div class="upload-btn-wrapper">
+                <button type="button" id="Create" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="ClearScreen();">Add</button>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div style="width:90%; margin:0 auto;">
+        <table id="deptGrid" class="table dt-responsive nowrap" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myLabel">Department Form</h5>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group" hidden="hidden">
+                    <label for="Id">Id</label>
+                    <input type="text" class="form-control" id="Id" placeholder="Id" />
+                </div>
+                <div class="form-group" >  
+                    <label for="Name">Name</label>
+                    <input type="text" class="form-control" id="Name" placeholder="Department Name" required/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="Submit" onclick="Check();">Save Changes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <link href="~/js/datatables/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/js/datatables/responsive.bootstrap.min.css" rel="stylesheet" />
+
+    <script src="~/js/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/js/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="~/js/sweetalert2/sweetalert2@9.js"></script>
+    <script>
+        var table = null;
+        $(document).ready(function () {
+            table = $("#deptGrid").DataTable({
+                "processing": true,
+                "serverside": true,
+                "filter": true,
+                "orderMulti": false,
+                "lengthMenu": [[5, 10, 25, 50, 100], [5, 10, 25, 50, 100]],
+                "ajax": {
+                    "url": "/Departments/LoadData",
+                    "type": "GET",
+                    "datatype": "json"
+                },
+                "columnDefs":
+                    [{
+                        "targets": [0],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [2],
+                        "searchable": false,
+                        "orderable": false
+                    }],
+                "columns": [
+                    { "data": "id", "name": "id", "autoWidth": true },
+                    { "data": "name", "name": "name", "autoWidth": true },
+                    {
+                        "render": function (data, type, full, meta) { return '<a class="btn btn-info" href="#" onclick="GetById(' + full.id + ')">Edit</a> <a class="btn btn-danger" href="#" onclick="Delete(' + full.id + ')">Delete</a>'; }
+                    }
+                ]
+            });
+        })
+
+        function GetById(id) {
+            $.ajax({
+                url: "Departments/LoadDataById/",
+                data: { id: id }
+            }).then((result) => {
+                if (result) {
+                    $('#myModal').modal('show');
+
+                    $('#Id').val(result.id);
+                    $('#Name').val(result.name);
+                }
+            })
+        }
+
+        function Submit() {
+            var department = new Object();
+            department.Id = $("#Id").val();
+            department.Name = $("#Name").val();
+            $.ajax({
+                url: "/Departments/SubmitData/",
+                data: department
+            }).then((result) => {
+                if (result.statusCode == 201 || result.statusCode == 204) {
+                    Swal.fire(
+                        'Success!',
+                        'Your file has been saved.',
+                        'success'
+                    )
+                    $('#myModal').modal('hide');
+                    table.ajax.reload();
+                }
+                else {
+                    Swal.fire(
+                        'Failed!',
+                        'Your file has not been saved.',
+                        'error'
+                    )
+                    $('#myModal').modal('hide');
+                }
+            })
+        }
+
+        function Delete(id) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        url: "/Departments/DeleteData/",
+                        data: { id: id }
+                    }).then((result) => {
+                        if (result.statusCode == 200) {
+                            Swal.fire(
+                                'Success!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                            table.ajax.reload();
+                        }
+                        else {
+                            Swal.fire(
+                                'Failed!',
+                                'Your file has not been deleted.',
+                                'error'
+                            )
+                        }
+                    })
+                }
+            })
+        }
+
+        function Check() {
+            if (!$("#Name").val()) {
+                Swal.fire(
+                    'Blank Space',
+                    'Please fill the blank space',
+                    'warning'
+                )
+            }
+            else {
+                Submit();
+            }
+        }
+
+        function ClearScreen() {
+            $("#Id").val("");
+            $("#Name").val("");
+        }
+    </script>
+}
