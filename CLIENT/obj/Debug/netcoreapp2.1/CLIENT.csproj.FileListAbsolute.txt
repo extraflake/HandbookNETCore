@@ -1,38 +1,39 @@
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\bin\Debug\netcoreapp2.1\CLIENT.deps.json
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\bin\Debug\netcoreapp2.1\CLIENT.runtimeconfig.json
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\bin\Debug\netcoreapp2.1\CLIENT.runtimeconfig.dev.json
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\bin\Debug\netcoreapp2.1\CLIENT.dll
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\bin\Debug\netcoreapp2.1\CLIENT.pdb
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\bin\Debug\netcoreapp2.1\CLIENT.Views.dll
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\bin\Debug\netcoreapp2.1\CLIENT.Views.pdb
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\bin\Debug\netcoreapp2.1\API.dll
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\bin\Debug\netcoreapp2.1\API.pdb
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.csprojAssemblyReference.cache
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.csproj.CoreCompileInputs.cache
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.RazorAssemblyInfo.cache
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.RazorAssemblyInfo.cs
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.AssemblyInfoInputs.cache
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.AssemblyInfo.cs
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.TagHelpers.input.cache
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.TagHelpers.output.cache
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.RazorCoreGenerate.cache
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.RazorTargetAssemblyInfo.cache
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.RazorTargetAssemblyInfo.cs
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.Views.pdb
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.csproj.CopyComplete
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.dll
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.pdb
-C:\Users\NaufalAj\Documents\Visual Studio 2017\Projects\Handbook Core\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Index.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.csprojAssemblyReference.cache
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.csproj.CoreCompileInputs.cache
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.RazorAssemblyInfo.cache
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.RazorAssemblyInfo.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.AssemblyInfoInputs.cache
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.AssemblyInfo.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.TagHelpers.input.cache
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.TagHelpers.output.cache
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.RazorCoreGenerate.cache
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Index.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.RazorTargetAssemblyInfo.cache
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.RazorTargetAssemblyInfo.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.dll
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.pdb
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\bin\Debug\netcoreapp2.1\CLIENT.deps.json
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\bin\Debug\netcoreapp2.1\CLIENT.runtimeconfig.json
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\bin\Debug\netcoreapp2.1\CLIENT.runtimeconfig.dev.json
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\bin\Debug\netcoreapp2.1\CLIENT.dll
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\bin\Debug\netcoreapp2.1\CLIENT.pdb
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\bin\Debug\netcoreapp2.1\CLIENT.Views.dll
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\bin\Debug\netcoreapp2.1\CLIENT.Views.pdb
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\bin\Debug\netcoreapp2.1\API.dll
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\bin\Debug\netcoreapp2.1\API.pdb
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.Views.pdb
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.csproj.CopyComplete
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Accounts\Index.g.cshtml.cs

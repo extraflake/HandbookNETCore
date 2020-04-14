@@ -37,6 +37,7 @@ namespace API
                 options.UseSqlServer(Configuration.GetConnectionString("MyConnection")));
 
             services.AddScoped<DepartmentRepository>();
+            services.AddScoped<AccountRepository>();
 
             string securityKey = "this_is_security_key_longest_i_have_ever_been_written_before";
             var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(securityKey));
