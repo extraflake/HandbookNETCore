@@ -33,8 +33,7 @@ namespace API
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<MyContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("MyConnection")));
+            services.AddDbContext<MyContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyConnection")));
 
             services.AddScoped<DepartmentRepository>();
             services.AddScoped<AccountRepository>();
@@ -44,13 +43,15 @@ namespace API
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
+                options.RequireHttpsMetadata = false;
+                options.SaveToken = true;
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,
                     ValidateAudience = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = "bootcampresourcemanagement",
-                    ValidAudience = "readers",
+                    ValidIssuer = "https://localhost:44370/",
+                    ValidAudience = "https://localhost:44370/",
                     IssuerSigningKey = symmetricSecurityKey
                 };
             });

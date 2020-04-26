@@ -1,0 +1,177 @@
+﻿@using Microsoft.AspNetCore.Http;
+@using System.IdentityModel.Tokens.Jwt
+@{
+    Layout = null;
+    ViewData["Title"] = "Homepage";
+}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/images/favicon.png">
+    <link href="~/js/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/js/chartist-js/dist/chartist.min.css" rel="stylesheet" />
+    <link href="~/js/chartist-js/dist/chartist-init.css" rel="stylesheet" />
+    <link href="~/js/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet" />
+    <link href="~/js/css-chart/css-chart.css" rel="stylesheet" />
+    <link href="~/js/toast-master/css/jquery.toast.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/colors/blue.css" rel="stylesheet" />
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-85622565-1', 'auto');
+        ga('send', 'pageview');</script>
+</head>
+<body class="fix-header fix-sidebar card-no-border">
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <b>
+                            <img src="~/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <img src="~/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
+                        <span>
+                            <img src="~/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <img src="~/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                        </span>
+                    </a>
+                </div>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav mr-auto mt-md-0 ">
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                        <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="icon-arrow-left-circle"></i></a> </li>
+                    </ul>
+                    <ul class="navbar-nav my-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="~/images/users/1.jpg" alt="user" class="profile-pic" /></a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img"><img src="~/images/users/1.jpg" alt="user"></div>
+                                            <div class="u-text">
+                                                <h4>Steave Jobs</h4>
+                                                <p class="text-muted">varun@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="left-sidebar">
+            <div class="scroll-sidebar">
+                <div class="user-profile">
+                    <div class="profile-img"> <img src="~/images/users/1.jpg" alt="user" /> </div>
+                    <div class="profile-text">
+                        <a href="#" class="dropdown-toggle link u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Markarn Doe <span class="caret"></span></a>
+                        <div class="dropdown-menu animated flipInY">
+                            <div class="dropdown-divider"></div> <a href="login.html" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+
+                        @{
+                            string token = Context.Session.GetString("UserToken");
+                            if (!string.IsNullOrWhiteSpace(token))
+                            {
+                                var readToken = new JwtSecurityTokenHandler().ReadJwtToken(token).Claims.FirstOrDefault(x => x.Type.Equals("role")).Value;
+                                if (readToken != null)
+                                {
+                                    if (readToken.Equals("Manager"))
+                                    {
+                                        <li class="nav-small-cap">MANAGER</li>
+                                        <li>
+                                            <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Master</span></a>
+                                            <ul aria-expanded="false" class="collapse">
+                                                <li><a href="@Url.Action("Index","Employees")">Employee</a></li>
+                                                <li><a href="@Url.Action("Index","Roles")">Role</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-devider"></li>
+                                    }
+                                }
+                                else if (readToken.Equals("Staff"))
+                                {
+                                    <li class="nav-small-cap">STAFF</li>
+                                    <li>
+                                        <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Master</span></a>
+                                        <ul aria-expanded="false" class="collapse">
+                                            <li><a href="@Url.Action("Index","Departments")">Department</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-devider"></li>
+                                }
+                            }
+                        }
+                    </ul>
+                </nav>
+            </div>
+            <div class="sidebar-footer">
+                <a href="" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+            </div>
+        </aside>
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                @RenderBody();
+            </div>
+            <footer class="footer">
+                © @DateTime.Now.Year Handbook Net Core
+            </footer>
+        </div>
+    </div>
+    <script src="~/js/jquery/jquery.min.js"></script>
+    <script src="~/js/bootstrap/js/popper.min.js"></script>
+    <script src="~/js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.slimscroll.js"></script>
+    <script src="~/js/waves.js"></script>
+    <script src="~/js/sidebarmenu.js"></script>
+    <script src="~/js/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="~/js/custom.min.js"></script>
+    <script src="~/js/chartist-js/dist/chartist.min.js"></script>
+    <script src="~/js/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="~/js/echarts/echarts-all.js"></script>
+    <script src="~/js/dashboard1.js"></script>
+    <script src="~/js/toastr.js"></script>
+    <script>
+        $.toast({
+            heading: 'Welcome to Monster admin',
+            text: 'Use the predefined ones, or specify a custom position object.',
+            position: 'top-right',
+            loaderBg: '#ff6849',
+            icon: 'info',
+            hideAfter: 3000,
+            stack: 6
+        });</script>
+    <script src="~/js/styleswitcher/jQuery.style.switcher.js"></script>
+</body>
+</html>
+
+

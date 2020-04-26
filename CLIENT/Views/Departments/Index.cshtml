@@ -8,7 +8,7 @@
     <br />
     <div class="row">
         <div class="col-md-4">
-            <div class="upload-btn-wrapper">
+            <div>
                 <button type="button" id="Create" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="ClearScreen();">Add</button>
             </div>
         </div>
@@ -26,6 +26,7 @@
         </table>
     </div>
 </div>
+
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -58,6 +59,7 @@
     <script src="~/js/datatables/jquery.dataTables.min.js"></script>
     <script src="~/js/datatables/dataTables.bootstrap4.min.js"></script>
     <script src="~/js/sweetalert2/sweetalert2@9.js"></script>
+
     <script>
         var table = null;
         $(document).ready(function () {
@@ -87,7 +89,9 @@
                     { "data": "id", "name": "id", "autoWidth": true },
                     { "data": "name", "name": "name", "autoWidth": true },
                     {
-                        "render": function (data, type, full, meta) { return '<a class="btn btn-info" href="#" onclick="GetById(' + full.id + ')">Edit</a> <a class="btn btn-danger" href="#" onclick="Delete(' + full.id + ')">Delete</a>'; }
+                        "render": function (data, type, full, meta) {
+                            return '<a class="btn btn-info" href="#" onclick="GetById(' + full.id + ')">Edit</a> <a class="btn btn-danger" href="#" onclick="Delete(' + full.id + ')">Delete</a>';
+                        }
                     }
                 ]
             });

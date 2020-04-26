@@ -11,8 +11,8 @@ namespace API.Models
     [Table("TB_M_Employee")]
     public class Employee : IEntity
     {
-        [Key]
-        public int Id { get; set; }
+        [ForeignKey("User")]
+        public string Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
@@ -20,8 +20,11 @@ namespace API.Models
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
 
-        public Department Department { get; set; }
         [ForeignKey("Department")]
         public int Department_Id { get; set; }
+        public Department Department { get; set; }
+
+        public User User { get; set; }
+        int IEntity.Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

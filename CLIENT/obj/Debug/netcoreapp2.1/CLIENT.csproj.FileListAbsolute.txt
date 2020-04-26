@@ -37,3 +37,6 @@ E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\bin\Debug
 E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.Views.pdb
 E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\CLIENT.csproj.CopyComplete
 E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Accounts\Index.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Accounts\Unauthorize.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Homepage\Index.g.cshtml.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\CLIENT\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutAdministrator.g.cshtml.cs

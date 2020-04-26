@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 using API.ViewModels;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -16,9 +18,18 @@ namespace CLIENT.Controllers
 {
     public class DepartmentsController : Controller
     {
-        public IActionResult Index()
+public IActionResult Index()
         {
-            return View();
+            string token = HttpContext.Session.GetString("UserToken");
+            if (!string.IsNullOrWhiteSpace(token))
+            {
+                var readToken = new JwtSecurityTokenHandler().ReadJwtToken(token).Claims.FirstOrDefault(x => x.Type.Equals("role")).Value;
+                if (readToken.Equals("Admin"))
+                {
+                    return View();
+                }
+            }
+            return RedirectToAction("Unauthorize", "Accounts", null, null);
         }
 
         public JsonResult LoadData()
@@ -28,7 +39,7 @@ namespace CLIENT.Controllers
             {
                 BaseAddress = new Uri("https://localhost:44370/api/")
             };
-            //client.DefaultRequestHeaders.Add("Authorization", "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjMzMTQzNDAzMDgyLCJpc3MiOiJib290Y2FtcHJlc291cmNlbWFuYWdlbWVudCIsImF1ZCI6InJlYWRlcnMifQ.DCIMFDIIFIYK41ORntIMyaJxHL093cPWDK6JhUN2vew");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("UserToken").ToString());
             var responseTask = client.GetAsync("Departments");
             responseTask.Wait();
             var result = responseTask.Result;
@@ -51,7 +62,7 @@ namespace CLIENT.Controllers
             {
                 BaseAddress = new Uri("https://localhost:44370/api/")
             };
-            //client.DefaultRequestHeaders.Add("Authorization", "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjMzMTQzNDAzMDgyLCJpc3MiOiJib290Y2FtcHJlc291cmNlbWFuYWdlbWVudCIsImF1ZCI6InJlYWRlcnMifQ.DCIMFDIIFIYK41ORntIMyaJxHL093cPWDK6JhUN2vew");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("UserToken").ToString());
             var responseTask = client.GetAsync("Departments/" + id);
             responseTask.Wait();
             var result = responseTask.Result;
@@ -73,6 +84,7 @@ namespace CLIENT.Controllers
             {
                 BaseAddress = new Uri("https://localhost:44370/api/")
             };
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("UserToken").ToString());
             var result = client.DeleteAsync("Departments/" + id).Result;
             return Json(result);
         }
@@ -87,7 +99,7 @@ namespace CLIENT.Controllers
             var buffer = System.Text.Encoding.UTF8.GetBytes(myContent);
             var byteContent = new ByteArrayContent(buffer);
             byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("UserToken").ToString());
             if (departmentVM.Id.Equals(0))
             {
                 var result = client.PostAsync("Departments/", byteContent).Result;

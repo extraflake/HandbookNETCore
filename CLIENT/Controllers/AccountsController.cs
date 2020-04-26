@@ -8,6 +8,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using API.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
@@ -16,19 +17,29 @@ namespace CLIENT.Controllers
 {
     public class AccountsController : Controller
     {
+        int statusCode = 400;
+
         public IActionResult Index()
         {
+            string token = HttpContext.Session.GetString("UserToken");
+            if (!string.IsNullOrWhiteSpace(token))
+            {
+                var readToken = new JwtSecurityTokenHandler().ReadJwtToken(token).Claims.FirstOrDefault(x => x.Type.Equals("role")).Value;
+                if (readToken.Equals("Admin"))
+                {
+                    return RedirectToAction("Index", "Departments", null, null);
+                }
+            }
             return View();
         }
 
         public JsonResult Login(LoginVM loginVM)
         {
-            AccountVM accountVM = null;
+            string token = null;
             var client = new HttpClient
             {
                 BaseAddress = new Uri("https://localhost:44370/api/")
             };
-            //client.DefaultRequestHeaders.Add("Authorization", "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjMzMTQzNDAzMDgyLCJpc3MiOiJib290Y2FtcHJlc291cmNlbWFuYWdlbWVudCIsImF1ZCI6InJlYWRlcnMifQ.DCIMFDIIFIYK41ORntIMyaJxHL093cPWDK6JhUN2vew");
             var myContent = JsonConvert.SerializeObject(loginVM);
             var buffer = System.Text.Encoding.UTF8.GetBytes(myContent);
             var byteContent = new ByteArrayContent(buffer);
@@ -36,36 +47,23 @@ namespace CLIENT.Controllers
             var responseTask = client.PostAsync("Accounts/Login/", byteContent).Result;
             if (responseTask.IsSuccessStatusCode)
             {
-                var json = JsonConvert.DeserializeObject(responseTask.Content.ReadAsStringAsync().Result).ToString();
-                accountVM = JsonConvert.DeserializeObject<AccountVM>(json);
-                GenerateToken(accountVM);
+                token = responseTask.Content.ReadAsStringAsync().Result.ToString();
+                HttpContext.Session.SetString("UserToken", token);
+                if (!string.IsNullOrWhiteSpace(token))
+                {
+                    statusCode = 200;
+                }
             }
             else
             {
                 ModelState.AddModelError(string.Empty, "Server error try after some time.");
             }
-            return Json(new { result = accountVM });
+            return Json(statusCode);
         }
 
-        public string GenerateToken(AccountVM accountVM)
+        public IActionResult Unauthorize()
         {
-            string key = "this_is_security_key_longest_i_have_ever_been_written_before";   
-            var issuer = "http://bootcamponline.com/"; 
-            var audience = "http://bootcamponline.com/";
-
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-   
-            var claims = new List<Claim>();
-            claims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
-            claims.Add(new Claim("id", accountVM.Id));
-            claims.Add(new Claim("name", accountVM.Name));
-            claims.Add(new Claim("email", accountVM.Email));
-            claims.Add(new Claim("role", accountVM.Role));
- 
-            var token = new JwtSecurityToken(issuer, audience, claims, expires: DateTime.Now.AddYears(1), signingCredentials: credentials);
-            var jwt_token = new JwtSecurityTokenHandler().WriteToken(token);
-            return jwt_token;
+            return View();
         }
     }
 }

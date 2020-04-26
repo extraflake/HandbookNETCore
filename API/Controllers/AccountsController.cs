@@ -16,6 +16,7 @@ namespace API.Controllers
     public class AccountsController : ControllerBase
     {
         AccountRepository _accountRepository;
+        AuthController _authController = new AuthController();
 
         public AccountsController(AccountRepository accountRepository)
         {
@@ -28,7 +29,8 @@ namespace API.Controllers
             var get = _accountRepository.Get(loginVM);
             if (get != null)
             {
-                return Ok(get);
+                var token = _authController.GetToken(get);
+                return Ok(token);
             }
             return BadRequest();
         }

@@ -1,0 +1,15 @@
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\NUnitAPI\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.dll
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\NUnitAPI\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.pdb
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\NUnitAPI\bin\Debug\netcoreapp2.1\nunit.engine.netstandard.dll
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\NUnitAPI\bin\Debug\netcoreapp2.1\Mono.Cecil.dll
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\NUnitAPI\bin\Debug\netcoreapp2.1\NUnitAPI.deps.json
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\NUnitAPI\bin\Debug\netcoreapp2.1\NUnitAPI.runtimeconfig.json
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\NUnitAPI\bin\Debug\netcoreapp2.1\NUnitAPI.runtimeconfig.dev.json
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\NUnitAPI\bin\Debug\netcoreapp2.1\NUnitAPI.dll
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\NUnitAPI\bin\Debug\netcoreapp2.1\NUnitAPI.pdb
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\NUnitAPI\obj\Debug\netcoreapp2.1\NUnitAPI.csprojAssemblyReference.cache
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\NUnitAPI\obj\Debug\netcoreapp2.1\NUnitAPI.csproj.CoreCompileInputs.cache
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\NUnitAPI\obj\Debug\netcoreapp2.1\NUnitAPI.AssemblyInfoInputs.cache
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\NUnitAPI\obj\Debug\netcoreapp2.1\NUnitAPI.AssemblyInfo.cs
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\NUnitAPI\obj\Debug\netcoreapp2.1\NUnitAPI.dll
+E:\Backup\Materi Bootcamp\Handbook .NET\Project\HandbookNETCore\NUnitAPI\obj\Debug\netcoreapp2.1\NUnitAPI.pdb
